@@ -1,0 +1,47 @@
+{
+    "appointments": {
+        "future": [
+            {
+                "id": 1,
+                "date": "2024-11-25",
+                "time": "10:00 AM",
+                "specialty": "cardiology",
+                "doctor": "Dr. González"
+            },
+            {
+                "id": 2,
+                "date": "2024-11-30",
+                "time": "2:00 PM",
+                "specialty": "dermatology",
+                "doctor": "Dra. Morales"
+            }
+        ],
+        "past": [
+            {
+                "id": 3,
+                "date": "2024-11-28",
+                "time": "11:00 AM",
+                "specialty": "odontology",
+                "doctor": "Dr. Rojas",
+                "status": "Cancelada",
+                "statusClass": "danger"
+            },
+            {
+                "id": 4,
+                "date": "2024-11-15",
+                "time": "11:00 AM",
+                "specialty": "cardiology",
+                "doctor": "Dr. González",
+                "status": "Completada"
+            },
+            {
+                "id": 5,
+                "date": "2024-11-10",
+                "time": "9:00 AM",
+                "specialty": "dermatology",
+                "doctor": "Dr. Rojas",
+                "status": "Cancelada"
+            }
+        ]
+    }
+}

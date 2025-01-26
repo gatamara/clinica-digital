@@ -1,0 +1,82 @@
+{
+  "specialties": [
+    {
+      "id": "cardiology",
+      "name": "Cardiología",
+      "availability": {
+        "totalSlots": 100,
+        "bookedSlots": 60
+      },
+      "doctors": [
+        {
+          "id": "gonzalez",
+          "name": "Dr. González",
+          "availability": {
+            "totalSlots": 50,
+            "bookedSlots": 30
+          }
+        },
+        {
+          "id": "morales",
+          "name": "Dra. Morales",
+          "availability": {
+            "totalSlots": 50,
+            "bookedSlots": 20
+          }
+        }
+      ]
+    },
+    {
+      "id": "dermatology",
+      "name": "Dermatología",
+      "availability": {
+        "totalSlots": 80,
+        "bookedSlots": 40
+      },
+      "doctors": [
+        {
+          "id": "rojas",
+          "name": "Dr. Rojas",
+          "availability": {
+            "totalSlots": 40,
+            "bookedSlots": 25
+          }
+        },
+        {
+          "id": "morales",
+          "name": "Dra. Morales",
+          "availability": {
+            "totalSlots": 40,
+            "bookedSlots": 15
+          }
+        }
+      ]
+    },
+    {
+      "id": "odontology",
+      "name": "Odontología",
+      "availability": {
+        "totalSlots": 50,
+        "bookedSlots": 20
+      },
+      "doctors": [
+        {
+          "id": "gonzalez",
+          "name": "Dr. González",
+          "availability": {
+            "totalSlots": 65,
+            "bookedSlots": 10
+          }
+        },
+        {
+          "id": "rojas",
+          "name": "Dr. Rojas",
+          "availability": {
+            "totalSlots": 25,
+            "bookedSlots": 10
+          }
+        }
+      ]
+    }
+  ]
+}
