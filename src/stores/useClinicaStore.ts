@@ -37,6 +37,7 @@ export const useClinicaStore = defineStore('clinica', () => {
   const specialties = ref<Specialty[]>([defaulSpecialty])
   const futureAppointments = ref<Future[]>([])
   const pastAppointments = ref<Past[]>([])
+  const isDashboardDataLoaded = ref(false)
 
   const login = async ({ email, password }: LoginParams) => {
     try {
@@ -51,11 +52,27 @@ export const useClinicaStore = defineStore('clinica', () => {
     }
   }
 
+  const isLoading = ref(false)
+
   const getDashboardData = async () => {
-    const result = await apiServices.getDashboard()
-    console.log(result)
-    user.value = result.user
-    appointments.value = result.appointments
+    if (isDashboardDataLoaded.value) {
+      console.log('Los datos del dashboard ya están cargados.')
+      return
+    }
+
+    isLoading.value = true
+
+    try {
+      const result = await apiServices.getDashboard()
+      console.log(result)
+      user.value = result.user
+      appointments.value = result.appointments
+      isDashboardDataLoaded.value = true // Marca los datos como cargados
+    } catch (error) {
+      console.error('Error al obtener datos del dashboard:', error)
+    } finally {
+      isLoading.value = false
+    }
   }
 
   const getAgenda = async () => {
@@ -70,12 +87,14 @@ export const useClinicaStore = defineStore('clinica', () => {
     pastAppointments.value = past
   }
   const scheduleAppointment = async (appointment: Appointment) => {
+    appointments.value = [...appointments.value, appointment]
+    //appointments.value.push(appointment)
     console.log(appointment, 'agendar nueva cita')
-    appointments.value.push(appointment)
   }
 
   return {
     isAuth,
+    isLoading,
     userEmail,
     password,
     user,
@@ -83,6 +102,7 @@ export const useClinicaStore = defineStore('clinica', () => {
     specialties,
     futureAppointments,
     pastAppointments,
+    isDashboardDataLoaded,
     //actions
     login,
     getDashboardData,

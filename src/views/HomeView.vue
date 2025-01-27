@@ -1,5 +1,6 @@
 <template>
-  <section>
+  <div v-if="store.isLoading">Cargando datos...</div>
+  <section v-else>
     <div class="pb-4">
       <WelcomeAlert :name="store.user.name" :date="store.user.nextAppointment.date"
         :time="store.user.nextAppointment.time" :doctor="store.user.nextAppointment.doctor" />
@@ -24,6 +25,7 @@ const store = useClinicaStore();
 onMounted(() => {
   store.getDashboardData();
 });
+
 
 </script>
 

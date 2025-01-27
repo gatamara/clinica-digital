@@ -40,6 +40,7 @@ import TextField from '@/components/TextField.vue';
 import type { Doctor } from '@/interfaces/agenda.interface';
 import { useClinicaStore } from '@/stores/useClinicaStore';
 import { onMounted, ref, watch } from 'vue';
+import formatTimeTo12Hour from '../composables/formatTimeTo12Hour';
 
 const store = useClinicaStore();
 const selected = ref(null);
@@ -92,16 +93,16 @@ const shedule = () => {
   }
   store.scheduleAppointment({
     specialty: selected.value,
-    doctor: selectedDoctor.value,
+    doctor: `Dr. ${selectedDoctor.value}`,
     date: date.value,
-    time: time.value,
+    time: formatTimeTo12Hour(time.value),
     status: 'pending',
     statusClass: "warning"
   })
 
   setTimeout(() => {
     alertMessage.value = 'Cita agendada correctamente.';
-  }, 2000);
+  }, 1000);
   selected.value = null;
   selectedDoctor.value = null;
   date.value = '';
