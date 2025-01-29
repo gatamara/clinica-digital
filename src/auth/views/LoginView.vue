@@ -29,7 +29,7 @@ import { useClinicaStore } from '@/stores/useClinicaStore';
 const store = useClinicaStore();
 
 const email = ref('pedro@pacientes.com');
-const password = ref('2222');
+const password = ref('admin1234');
 const rememberme = ref(false);
 
 const onSubmit = async () => {

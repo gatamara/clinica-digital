@@ -96,7 +96,7 @@ const shedule = () => {
     doctor: `Dr. ${selectedDoctor.value}`,
     date: date.value,
     time: formatTimeTo12Hour(time.value),
-    status: 'pending',
+    status: 'Pendiente',
     statusClass: "warning"
   })
 

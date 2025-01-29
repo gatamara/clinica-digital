@@ -50,7 +50,7 @@ router.beforeEach((to, from, next) => {
   const store = useClinicaStore()
   const { isAuth } = storeToRefs(store)
 
-  console.log('RUTA A LA QUE INTENTA ACCEDER:', to.path)
+  //console.log('RUTA A LA QUE INTENTA ACCEDER:', to.path)
   console.log('ESTADO DE isAuth:', isAuth.value)
 
   if (to.meta.protected && !isAuth.value) {

@@ -37,7 +37,7 @@ export const useClinicaStore = defineStore('clinica', () => {
   const specialties = ref<Specialty[]>([defaulSpecialty])
   const futureAppointments = ref<Future[]>([])
   const pastAppointments = ref<Past[]>([])
-  const isDashboardDataLoaded = ref(false)
+  const isDashboardDataLoaded = ref(false) // Indica si los datos del dashboard ya fueron cargados
 
   const login = async ({ email, password }: LoginParams) => {
     try {
@@ -65,8 +65,8 @@ export const useClinicaStore = defineStore('clinica', () => {
     try {
       const result = await apiServices.getDashboard()
       console.log(result)
-      user.value = result.user
-      appointments.value = result.appointments
+      user.value = result.user // Asigna los datos del usuario al estado
+      appointments.value = result.appointments // Asigna las citas al estado
       isDashboardDataLoaded.value = true // Marca los datos como cargados
     } catch (error) {
       console.error('Error al obtener datos del dashboard:', error)
